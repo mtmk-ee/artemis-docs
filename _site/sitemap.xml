@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://localhost:4000/jekyll/update/2020/07/24/welcome-to-jekyll.html</loc>
+  </url>
+  
+  
+
+
+  
+  
+  <url>
+    <loc>http://localhost:4000/404.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/utility-classes/gpio.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/about.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/python-library/agent-class.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/python-library/beaglebone-class.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/setup-from-scratch/beaglebone-from-scratch.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/setup-from-scratch/cosmos-from-scratch.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/cosmos/cosmos-web.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/cosmos/cosmos.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/cosmos/cosmos1.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/cosmos/cosmos2.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/cosmos/cosmos3.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/cosmos/cosmos4.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/python-library/cubesat-class.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/other/development-environment.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/other/doxygen.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/faq.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/other/hardware-interfaces.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/agents/heater-agent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/agents/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/setup/index.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/site/index.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/index.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/other/programming-tutorials.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/agents/pycubed-agent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/other/pycubed-communication.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/utility-classes/pycubed.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/python-library/python-library.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/agents/raspberry-pi-agent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/setup-from-scratch/raspi-from-scratch.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/safety-procedures.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/scripts/scripts1.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/scripts/scripts2.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/scripts/scripts3.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/scripts/scripts4.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/setup/setup1.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/setup/setup2.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/setup/setup3.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/setup/setup4.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/utility-classes/simpleagent-devices.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/utility-classes/simpleagent.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/agents/sun-sensor-agent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/agents/switch-agent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/agents/temperature-sensor-agent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/utility-classes/time.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/utility-classes/timer.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/other/useful-tools.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/assets/css/style.css</loc>
+  </url>
+  
+  
+</urlset>
