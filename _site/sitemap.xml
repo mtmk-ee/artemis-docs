@@ -147,6 +147,12 @@
   
   
   
+  <url>
+    <loc>http://localhost:4000/pages/tutorials/index.html</loc>
+  </url>
+  
+  
+  
   
   
   <url>
@@ -229,12 +235,6 @@
   
   <url>
     <loc>http://localhost:4000/pages/tutorials/scripts/scripts3.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4000/pages/tutorials/scripts/scripts4.html</loc>
   </url>
   
   

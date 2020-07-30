@@ -242,6 +242,17 @@
 
 
 
+{
+"title": "Tutorials",
+"tags": "software",
+"keywords": "software",
+"url": "pagestutorialsindex.html",
+"summary": ""
+}
+,
+
+
+
 
 
 {
@@ -361,7 +372,7 @@
 
 
 {
-"title": "Writing Payload Scripts",
+"title": "Writing a Payload Script",
 "tags": "softwarepayloadscriptscamera",
 "keywords": "software, payload, scripts, camera",
 "url": "pagestutorialsscriptsscripts1.html",
@@ -372,7 +383,7 @@
 
 
 {
-"title": "Reading Sensors",
+"title": "Uploading the Script",
 "tags": "softwarepayloadscriptscamera",
 "keywords": "software, payload, scripts, camera",
 "url": "pagestutorialsscriptsscripts2.html",
@@ -383,21 +394,10 @@
 
 
 {
-"title": "Working with Agents",
+"title": "Running the Script",
 "tags": "softwarepayloadscriptscamera",
 "keywords": "software, payload, scripts, camera",
 "url": "pagestutorialsscriptsscripts3.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Viewing the Output",
-"tags": "software",
-"keywords": "software",
-"url": "pagestutorialsscriptsscripts4.html",
 "summary": ""
 }
 ,

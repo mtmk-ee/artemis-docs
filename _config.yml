@@ -11,7 +11,7 @@ title: Artemis CubeSat Kit
 description: "A low-cost cubesat kit for education. Created by Hawaii Space Flight Laboratory"
 
 # The subpath of the website on the domain
-baseurl: "/artemis-cubesat-kit" # the subpath of your site, e.g. /blog
+baseurl: "/artemis-docs" # the subpath of your site, e.g. /blog
 
 # The hostname & protocol of the site
 url: "https://mtmk-ee.github.io"
