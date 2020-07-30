@@ -29,22 +29,22 @@ project_website: "http://leonidas-b.hsfl.hawaii.edu/wordpress-5.0.1/artemis-2-2/
 # ===================================== Internal Paths =====================================
 agent_diagram_folder: "/resources/diagrams/agents"
 
-folder_resources: "/artemis-cubesat-kit/resources"
-folder_diagrams: "/artemis-cubesat-kit/resources/diagrams"
+folder_resources: "/artemis-docs/resources"
+folder_diagrams: "/artemis-docs/resources/diagrams"
 
 
-folder_docs: "/artemis-cubesat-kit/pages/documentation"
-folder_docs_other: "/artemis-cubesat-kit/pages/documentation/other"
-folder_docs_cosmos: "/artemis-cubesat-kit/pages/documentation/cosmos"
-folder_docs_library: "/artemis-cubesat-kit/pages/documentation/python-library"
-folder_docs_agents: "/artemis-cubesat-kit/pages/documentation/agents"
-folder_docs_utility: "/artemis-cubesat-kit/pages/documentation/utility-classes"
+folder_docs: "/artemis-docs/pages/documentation"
+folder_docs_other: "/artemis-docs/pages/documentation/other"
+folder_docs_cosmos: "/artemis-docs/pages/documentation/cosmos"
+folder_docs_library: "/artemis-docs/pages/documentation/python-library"
+folder_docs_agents: "/artemis-docs/pages/documentation/agents"
+folder_docs_utility: "/artemis-docs/pages/documentation/utility-classes"
 
-folder_tutorials: "/artemis-cubesat-kit/pages/tutorials"
-folder_tutorials_cosmos: "/artemis-cubesat-kit/pages/tutorials/cosmos"
-folder_tutorials_scripts: "/artemis-cubesat-kit/pages/tutorials/scripts"
-folder_tutorials_setup: "/artemis-cubesat-kit/pages/tutorials/setup"
-folder_tutorials_from_scratch: "/artemis-cubesat-kit/pages/tutorials/setup-from-scratch"
+folder_tutorials: "/artemis-docs/pages/tutorials"
+folder_tutorials_cosmos: "/artemis-docs/pages/tutorials/cosmos"
+folder_tutorials_scripts: "/artemis-docs/pages/tutorials/scripts"
+folder_tutorials_setup: "/artemis-docs/pages/tutorials/setup"
+folder_tutorials_from_scratch: "/artemis-docs/pages/tutorials/setup-from-scratch"
 
 # ===================================== GitHub Folders =====================================
 
@@ -59,7 +59,7 @@ gh_agent_source_folder: "/blob/master/BeagleBone/source/agents"
 # # Footer "Edit this page on GitHub" link text
 # gh_edit_link: true # show or hide edit this page link
 # gh_edit_link_text: "Edit this page on GitHub."
-# gh_edit_repository: "https://github.com/mtmk-ee/artemis-cubesat-kit" # the github URL for your repo
+# gh_edit_repository: "https://github.com/mtmk-ee/artemis-docs" # the github URL for your repo
 # gh_edit_branch: "master/docs" # the branch that your docs is served from
 # gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
 

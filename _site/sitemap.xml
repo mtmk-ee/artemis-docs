@@ -141,6 +141,14 @@
   
   
   
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/site/index.html</loc>
+  </url>
+  
+  
+  
   <url>
     <loc>http://localhost:4000/pages/tutorials/setup/index.html</loc>
   </url>
@@ -149,14 +157,6 @@
   
   <url>
     <loc>http://localhost:4000/pages/tutorials/index.html</loc>
-  </url>
-  
-  
-  
-  
-  
-  <url>
-    <loc>http://localhost:4000/pages/documentation/site/index.html</loc>
   </url>
   
   
