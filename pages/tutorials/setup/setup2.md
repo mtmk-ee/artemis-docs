@@ -44,33 +44,34 @@ You can choose either to copy the disk image from the flash drive to your comput
 
 First, click on the new button to add a new virtual machine.
 
-<div align="center">
-<img src="https://github.com/mtmk-ee/artemis-cubesat-kit/wiki/resources/tutorials/setup/virtualbox_home_new.png" width=600></img>
-</div><br>
+
+{% include image.html file="/resources/tutorials/setup/part2/home_new.png" width="100%" alt="" align="center" %}
+
 
 You'll want to name the operating system something descriptive (e.g. Artemis Development Environment).
 Change the _Type_ field to _Linux_, and the _Version_ field to _Ubuntu (64-bit)_ as shown below, and click _Next_.
-<div align="center">
-<img src="https://github.com/mtmk-ee/artemis-cubesat-kit/wiki/resources/tutorials/setup/virtualbox_new_vm.png" width=400></img>
-</div><br>
+
+
+{% include image.html file="/resources/tutorials/setup/part2/new_vm.png" width="400px" alt="" align="center" %}
+
 
 Now you have the option of setting how much of your computer's RAM will be allocated for the virtual machine. Setting this value too low means that the virtual machine will run slowly, while setting it too high could slow down could cause other issues. Using a value near the right end of the green zone is a good idea. After choosing your RAM value, click _Next_.
 
-<div align="center">
-<img src="https://github.com/mtmk-ee/artemis-cubesat-kit/wiki/resources/tutorials/setup/virtualbox_memory_size.png" width=400></img>
-</div><br>
+
+{% include image.html file="/resources/tutorials/setup/part2/memory_size.png" width="400px" alt="" align="center" %}
+
 
 Here you will be able to add the development environment disk image. Click _Use an existing virtual hard disk file_, then click the folder icon, then the _Add_ button in the new window, and browse for the disk image (the `.vdi` file) you previously obtained. Click _Next_.
 
-<div align="center">
-<img src="https://github.com/mtmk-ee/artemis-cubesat-kit/wiki/resources/tutorials/setup/virtualbox_add_drive.png" width=400></img>
-</div><br>
+
+{% include image.html file="/resources/tutorials/setup/part2/add_drive.png" width="600px" alt="" align="center" %}
+
 
 Now that the virtual machine is installed, we should probably change a couple more settings. Select your new virtual machine on the left, and click on the _Settings_ button at the top.
 
-<div align="center">
-<img src="https://github.com/mtmk-ee/artemis-cubesat-kit/wiki/resources/tutorials/setup/virtualbox_home_settings.png" width=600></img>
-</div><br>
+
+{% include image.html file="/resources/tutorials/setup/part2/home_settings.png" width="100%" alt="" align="center" %}
+
 
 In the System -> Processor tab you can choose to allow the virtual machine to use multiple physical processors.
 In the Display -> Screen tab you should enable the _Enable 3D Acceleration_ option to allow rendering to be offloaded to your GPU.
