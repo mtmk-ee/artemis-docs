@@ -193,6 +193,36 @@
           
           
           
+          
+          
+          <li><a title="Getting Started" href="/artemis-docs/pages/documentation/site/getting-started.html">Getting Started</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Site Structure" href="/artemis-docs/pages/documentation/site/structure.html">Site Structure</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Pages" href="#">Pages</a>
+      <ul>
+          
+          
+          
+          <li><a title="Contents" href="/artemis-docs/pages/documentation/site/pages/contents.html">Contents</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -227,7 +257,7 @@
           
           
           
-          <li><a title="" href="/artemis-docs/pages/documentation/site/includes/agents/quick-details.html"></a></li>
+          <li class="active"><a title="Includes" href="/artemis-docs/pages/documentation/site/includes/index.html">Includes</a></li>
           
           
           
@@ -321,11 +351,16 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <p>Includes are HTML files that can be pasted (&quot;included&quot;) into a page.</p>
-<p>For example, to include the <code>head.html</code> file from the <code>_includes</code> folder, you could use the following Liquid code:</p>
+   <h2 id="brief">Brief</h2>
+<p>Includes are HTML files that can be pasted (&quot;included&quot;) into a page using Liquid code.</p>
+<p>For example, to include the <code>head.html</code> file from the <code>_includes</code> folder, you could write:</p>
 <p><code>{% include head.html %}</code></p>
 <p>You can also pass parameters like so (this is only for demonstration):</p>
 <p><code>{% include head.html param_one=&quot;my value&quot; param_two=20 %}</code></p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://jekyllrb.com/docs/includes/">Jekyll Documentation - Includes</a></li>
+</ul>
 
 
     <div class="tags">

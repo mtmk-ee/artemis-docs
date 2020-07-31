@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  
-  <url>
-    <loc>http://localhost:4000/jekyll/update/2020/07/24/welcome-to-jekyll.html</loc>
-  </url>
-  
-  
 
 
   
@@ -20,19 +14,13 @@
   
   
   <url>
-    <loc>http://localhost:4000/pages/documentation/utility-classes/gpio.html</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>http://localhost:4000/about.html</loc>
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4000/pages/documentation/python-library/agent-class.html</loc>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/agent-class.html</loc>
   </url>
   
   
@@ -40,7 +28,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/pages/documentation/python-library/beaglebone-class.html</loc>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/beaglebone-class.html</loc>
   </url>
   
   
@@ -48,6 +36,8 @@
   <url>
     <loc>http://localhost:4000/pages/tutorials/setup-from-scratch/beaglebone-from-scratch.html</loc>
   </url>
+  
+  
   
   
   
@@ -94,7 +84,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/pages/documentation/python-library/cubesat-class.html</loc>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/cubesat-class.html</loc>
   </url>
   
   
@@ -123,6 +113,20 @@
   
   
   
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/utility-classes/gpio.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/gps-class.html</loc>
+  </url>
+  
+  
+  
   <url>
     <loc>http://localhost:4000/pages/other/hardware-interfaces.html</loc>
   </url>
@@ -136,6 +140,18 @@
   
   
   <url>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/heater-class.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/imu-class.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/pages/documentation/agents/</loc>
   </url>
   
@@ -143,8 +159,16 @@
   
   
   
+  
+  
   <url>
-    <loc>http://localhost:4000/pages/documentation/site/index.html</loc>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/index.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/index.html</loc>
   </url>
   
   
@@ -193,12 +217,6 @@
   
   
   
-  <url>
-    <loc>http://localhost:4000/pages/documentation/python-library/python-library.html</loc>
-  </url>
-  
-  
-  
   
   
   <url>
@@ -209,6 +227,12 @@
   
   <url>
     <loc>http://localhost:4000/pages/tutorials/setup-from-scratch/raspi-from-scratch.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/utility-classes/raspi.html</loc>
   </url>
   
   
@@ -279,8 +303,16 @@
   
   
   
+  
+  
   <url>
     <loc>http://localhost:4000/pages/documentation/agents/sun-sensor-agent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/sunsensor-class.html</loc>
   </url>
   
   
@@ -293,6 +325,12 @@
   
   <url>
     <loc>http://localhost:4000/pages/documentation/agents/temperature-sensor-agent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/raspi-library/tempsensor-class.html</loc>
   </url>
   
   
@@ -325,6 +363,42 @@
   
   <url>
     <loc>http://localhost:4000/assets/css/style.css</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/tests/gpio-test.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/tests/pycubed-test.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/tests/raspi-test.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/tests/sunsensor-test.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/tests/switch-test.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/documentation/tests/tempsensor-test.html</loc>
   </url>
   
   

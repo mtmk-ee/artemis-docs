@@ -1,5 +1,14 @@
 
-{% assign description = site.data.class_docs[page.class_name].description %}
+
+
+{% if page.obc == "raspi" %}
+    {% assign description = site.data.class_docs.raspi[page.class_name].description %}
+{% elsif page.obc == "pycubed" %}
+    {% assign description = site.data.class_docs.pycubed[page.class_name].description %}
+{% else %}
+    {% assign description = site.data.class_docs.beaglebone[page.class_name].description %}
+{% endif %}
+
 
 <table>
     <thead>

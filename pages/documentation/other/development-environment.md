@@ -14,18 +14,23 @@ The development environment collectively refers to an [Ubuntu 18.04.3](https://e
 
 * Flight Software
   * BeagleBone Software
+    * Agent source code (located under `~/cosmos/source/projects/cubesat-kit`)
+    * Pre-compiled agents (located under `~/cosmos/source/projects/cubesat-kit/build`)
   * Raspberry Pi Software
+    * Artemis Python Library (located under `~/raspberrypi/artemis`)
+    * Example camera script (located at `~/raspberrypi/camera.py`)
   * PyCubed Software
+    * Main code (located under `~/pycubed`)
 * COSMOS
   * COSMOS (dev branch)
-    * SimpleAgent template project
+    * SimpleAgent template project (located under `~/cosmos/source/projects/simpleagent_template`)
   * COSMOS Web
-* Tools
+* Other
   * Qt Creator
     * ARM Cross Compiler
   * Scripts for convenience
-    * `~/copy_agents`
-* Other
+    * Copy built agents to the BeagleBone (`~/copy_agents`)
+    * Start COSMOS Web (`~/cosmos-web`)
   * MongoDB Server
   * Doxygen
   * CMake

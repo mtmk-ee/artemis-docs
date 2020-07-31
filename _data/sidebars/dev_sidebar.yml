@@ -14,6 +14,22 @@ entries:
       url: /pages/documentation/site/index.html
       output: web
 
+    - title: Getting Started
+      url: /pages/documentation/site/getting-started.html
+      output: web
+
+    - title: Site Structure
+      url: /pages/documentation/site/structure.html
+      output: web
+
+# =================================================================================
+  - title: Pages
+    output: web
+    folderitems:
+    - title: Contents
+      url: /pages/documentation/site/pages/contents.html
+      output: web
+
 # =================================================================================
   - title: Layouts
     output: web
@@ -29,8 +45,8 @@ entries:
   - title: Includes
     output: web
     folderitems:
-    - title: 
-      url: /pages/documentation/site/includes/agents/quick-details.html
+    - title: Includes
+      url: /pages/documentation/site/includes/index.html
       output: web
       subfolders:
       - title: Agents

@@ -1,10 +1,11 @@
 ---
-title: This Website
+title: Site Documentation for Developers
 permalink: /pages/documentation/site/index.html
 layout: page
 
 keywords: faq
 sidebar: dev_sidebar
+search: exclude
 ---
 
 
@@ -18,24 +19,16 @@ website works.
 ## Overview
 
 This website uses [Jekyll](https://jekyllrb.com/), a static site generator. The site is hosted by GitHub Pages.
+[Jekyll Documentation Theme 6.0](https://idratherbewriting.com/documentation-theme-jekyll/index.html) is used for the
+theme.
 
-## Set Up for Local Testing
+If you're just joining the project, visit the [Getting Started](getting-started.html) page for instructions on setup.
 
-Modifying the website, committing changes, and waiting for GitHub pages to regenerate the site is awfully slow.
-You should definitely set up Jekyll for local testing. As of now, Jekyll doesn't seem to support local testing
-on Windows machines.
+## Additional Resources
+If you would like additional information on the tools used, you can visit the pages below. And as always, Google
+is a great resource!
 
-### 1. Install Ruby
-
-Visit the [Jekyll installation page](https://jekyllrb.com/docs/installation/) and follow the steps there.
-
-### 2. Install the Jekyll Gem
-Run the command:
-
-```bash
-$ gem install jekyll bundler
-```
-
-## External Resources
-
-If you're unsure of where to begin, you should check out Jekyll.
+* [Jekyll Documentation](https://jekyllrb.com/docs/)
+* [Liquid Documentation](https://shopify.github.io/liquid/)
+* [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+* [Jekyll Documentation Theme](https://idratherbewriting.com/documentation-theme-jekyll/index.html)

@@ -52,7 +52,7 @@ folder_tutorials_from_scratch: "/artemis-docs/pages/tutorials/setup-from-scratch
 gh_repo: "https://github.com/mtmk-ee/artemis-cubesat-kit"
 
 # The folder agent source files are used in (used in quick description)
-gh_agent_source_folder: "/blob/master/BeagleBone/source/agents"
+gh_agent_source_folder: "/blob/master/Software/BeagleBone/source/agents"
 
 # ===================================== Theme Configuration =====================================
 

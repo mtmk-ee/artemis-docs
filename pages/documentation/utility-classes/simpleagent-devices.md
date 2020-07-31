@@ -16,10 +16,8 @@ list_members: false
 ## Description <a name="description"></a>
 The `Device` class is a base (i.e. parent or super) class of various types. The devices have various properties which can be posted, meaning that they can be viewed externally (e.g. through a terminal or [[COSMOS Web]]). If a device doesn't have the properties necessary, custom properties can be used instead, although they cannot be posted. And if there isn't a supported device you need, you can always use the [`CustomDevice`](#customdevice) device type to hold custom properties (again, these cannot be posted).
 
-## Common Member Functions
-These functions belong to each device type.
 
-{% include class_docs/member_table.html %}
+{% include class_docs/members_table.html %}
 
 ## Supported Device Types
 Below are the supported device types. Note that in the last column of each table, the `XXX` indicates the COSMSOS device number.
