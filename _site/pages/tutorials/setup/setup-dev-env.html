@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="software,  software">
-<title>COSMOS Web | Artemis Cubesat Kit</title>
+<title>Setting up the Development Environment | Artemis Cubesat Kit</title>
 <link rel="stylesheet" href="/artemis-docs/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -152,7 +152,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/artemis-docs/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="COSMOS Web">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Setting up the Development Environment">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -385,7 +385,7 @@
                   
                   
                   
-                  <li class="active"><a title="COSMOS Web" href="/artemis-docs/pages/documentation/cosmos/cosmos-web.html">COSMOS Web</a></li>
+                  <li><a title="COSMOS Web" href="/artemis-docs/pages/documentation/cosmos/cosmos-web.html">COSMOS Web</a></li>
                   
                   
                   
@@ -661,7 +661,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">COSMOS Web</h1>
+   <h1 class="post-title-main">Setting up the Development Environment</h1>
 </div>
 
 
@@ -671,62 +671,49 @@
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
     
 
-   <h2 id="what-is-cosmos-web">What is COSMOS Web?</h2>
-<p>COSMOS Web is a web-based GUI for COSMOS missions. It provides a far more convenient way of gathering information
-from COSMOS agents than the traditional command line method.</p>
-<h2 id="starting-cosmos-web">Starting COSMOS Web</h2>
-<h3 id="with-the-development-environment">With the Development Environment</h3>
-<p>If you are using the development environment, you can simply run the following command in a terminal:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>~/cosmos-web.sh
+   <h2 id="install-dependencies">1. Install Dependencies</h2>
+<h3 id="virtualbox">1.1 VirtualBox</h3>
+<p>VirtualBox is used to run the virtual machine used as the development environment. Get it <a href="https://www.virtualbox.org/wiki/Downloads">here</a>.</p>
+<h3 id="install-vagrant">1.2 Install Vagrant</h3>
+<p>Vagrant is used to set up the virtual machine used as the development environment. Get it <a href="https://www.vagrantup.com/downloads">here</a>.</p>
+<h3 id="install-the-guest-additions-plugin">1.3 Install the Guest Additions Plugin</h3>
+<p>The Vagrant guest additions plugin automatically installs VirtualBox guest additions into the virtual machine. Install it
+by opening up a command prompt (Windows) or a terminal (Linux/Mac) and running the following:</p>
+<pre><code>vagrant plugin install vagrant-vbguest
+</code></pre>
+<h2 id="set-up-the-vagrant-box">2. Set up the Vagrant Box</h2>
+<p>Download the development environment tools from here</p>
+<h3 id="download-the-artemis-box">2.1 Download the Artemis Box</h3>
+<p>Download the Vagrant box <a href="">here</a> to a place you want to run Vagrant from.</p>
+<h3 id="add-the-artemis-box">2.2 Add the Artemis Box</h3>
+<p>From a command prompt or terminal window, enter the following (using the path you downloaded the Vagrant box to):</p>
+<pre><code>cd PATH/TO/VAGRANT/BOX
+vagrant box add artemis.box
+</code></pre>
+<h3 id="create-the-machine">2.3 Create the Machine</h3>
+<p>Next, enter the following (using the path you want to run the box from):</p>
+<pre><code>cd PATH/TO/VM
+vagrant init
+vagrant up
+</code></pre>
+<p>After a minute or so you should see the virtual machine boot.</p>
+<h2 id="update-software">3. Update Software</h2>
+<div markdown="span" class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> This step is optional. Follow this step if you want to make sure you have the
+latest software.
+</div>
+<p>From the virtual machine, open a new terminal (<kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>) and run the following commands:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span>
+<span class="nv">$ </span>git clone https://github.com/mtmk-ee/artemis-cubesat-kit.git
+<span class="nv">$ </span><span class="nb">cd </span>artemis-cubesat-kit
+<span class="nv">$ </span><span class="nb">sudo chmod</span> +x update
+<span class="nv">$ </span>./update
 </code></pre></div></div>
-<p>A browser window should open up and display the COSMOS Web homepage. If not, you can go to
-<a href="http://0.0.0.0:5000/">http://0.0.0.0:5000/</a> in your browser.</p>
-<h3 id="without-the-development-environment">Without the Development Environment</h3>
-<p>For convenience you should make a shell script. Create a file called <code>cosmos-web.sh</code> in the home directory in Ubuntu,
-and paste the following contents:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-
-<span class="nb">sudo </span>systemctl start mongod
-
-~/cosmos/tools/agent_mongo <span class="nt">--realm</span> artemis &amp;
-<span class="nb">cd</span> ~/cosmos/source/tools/cosmos-web
-npm start <span class="o">&amp;&amp;</span> <span class="nb">fg</span>
-</code></pre></div></div>
-<p>Save the file, and run the following command in a local terminal:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo chmod</span> +x ~/cosmos-web.sh
-</code></pre></div></div>
-<p>Now you can start COSMOS Web by running this script:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>~/cosmos-web.sh
-</code></pre></div></div>
-<p>A browser window should open up and display the COSMOS Web homepage. If not, you can go to
-<a href="http://0.0.0.0:5000/">http://0.0.0.0:5000/</a> in your browser.</p>
+<p>You will be prompted whether or not you want to update various components. Entering <code>y</code> will overwrite the existing
+installations.</p>
 
 
     <div class="tags">

@@ -52,7 +52,7 @@ First, SSH into the Raspberry Pi from your host computer and run the following:
 
 ```bash
 $ sudo apt-get update
-$ sudo apt-get install python-picamera python3-picamera.
+$ sudo apt-get install python-picamera python3-picamera
 ```
 
 It’s as easy as that! For further details, visit the [PiCamera installation guide]*https://picamera.readthedocs.io/en/release-1.13/install.html).
