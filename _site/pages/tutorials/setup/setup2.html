@@ -729,89 +729,61 @@ $('#toc').on('click', 'a', function() {
 
 
 <!-- ==================== Page Contents ==================== -->
-<h2 id="what-you-need">What You Need</h2>
+<h2 id="brief">Brief</h2>
+<p>The Artemis Development Environment is provided as an Ubuntu 18.04.4 image with necessary tools preinstalled.</p>
+<p>VirtualBox and Vagrant are used to ensure the development environment is cross-platform. VirtualBox is used for
+virtualization of operating systems, and Vagrant is used to set up the virtual machine in a mostly
+platform-independent manner.</p>
+<h3 id="why-linux">Why Linux?</h3>
+<p>Linux makes working with the kit software much easier, as the operating system as a whole is designed for developers.
+It is also fairly lightweight, meaning that unnecessary add-ons are stripped away so that the download size is
+minimal.</p>
+<h3 id="supported-operating-systems">Supported Operating Systems</h3>
+<p>The supported operating systems are essentially those that VirtualBox and Vagrant support:</p>
 <ul>
-<li>A computer running Windows, macOS, or a Linux distribution
-<ul>
-<li>As the tools used tend to eat up RAM and processing power, it is recommended you have a decently powerful computer</li>
+<li>Windows</li>
+<li>macOS</li>
+<li>Linux</li>
 </ul>
-</li>
-<li>An internet connection</li>
-<li>A USB flash drive with the development environment (included)</li>
-</ul>
-<h2 id="install-virtualbox">1. Install VirtualBox</h2>
-<p>First you'll need to install <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> on your computer. This is a neat program that allows you to run <em>entire operating systems</em> (called virtual machines) running atop your actual one. We've decided to use VirtualBox for maximum portability, as it runs on most operating systems.</p>
-<h2 id="download-7-zip">2. Download 7-Zip</h2>
-<p>Since the disk image is compressed, you'll need to install <a href="https://www.7-zip.org/download.html">7-Zip</a> to decompress it.</p>
-<h2 id="set-up-the-virtual-machine">3. Set up the Virtual Machine</h2>
-<div markdown="span" class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Having problems with this step? Visit the <a href="/artemis-docs/pages/faq.html#virtualbox">FAQ page</a>!
+<h2 id="install-dependencies">1. Install Dependencies</h2>
+<h3 id="virtualbox">1.1 VirtualBox</h3>
+<p>VirtualBox is used to run the virtual machine used as the development environment. Get it <a href="https://www.virtualbox.org/wiki/Downloads">here</a>.</p>
+<h3 id="install-vagrant">1.2 Install Vagrant</h3>
+<p>Vagrant is used to set up the virtual machine used as the development environment. Get it <a href="https://www.vagrantup.com/downloads">here</a>.</p>
+<h3 id="install-the-guest-additions-plugin">1.3 Install the Guest Additions Plugin</h3>
+<p>The Vagrant guest additions plugin automatically installs VirtualBox guest additions into the virtual machine. Install it
+by opening up a command prompt (Windows) or a terminal (Linux/Mac) and running the following:</p>
+<pre><code>vagrant plugin install vagrant-vbguest
+</code></pre>
+<h2 id="set-up-the-artemis-box">2. Set up the Artemis Box</h2>
+<h3 id="add-the-box">2.1 Add the Box</h3>
+<p>Download the Vagrant box (artemis.box). From a command prompt or terminal window, enter the following (using the path you downloaded the Vagrant box to):</p>
+<pre><code>cd PATH/TO/VAGRANT/BOX
+vagrant box add artemis artemis.box
+</code></pre>
+<p>You can delete the <code>artemis.box</code> file you downloaded if you wish.</p>
+<h3 id="create-the-virtual-machine">2.2 Create the Virtual Machine</h3>
+<p>Next, enter the following (replacing <code>PATH/TO/VM</code> with the folder you chose):</p>
+<pre><code>cd PATH/TO/VM
+vagrant init artemis
+</code></pre>
+<p>Download the <code>Vagrantfile</code> file to the same folder, overwriting the file created by the <code>vagrant init artemis</code> command.
+The new Vagrantfile will set up the virtual machine with necessary virtualization settings.</p>
+<h3 id="start-the-virtual-machine">2.3 Start the Virtual Machine</h3>
+<p>Next run the command:</p>
+<pre><code>vagrant up
+</code></pre>
+<p>After a minute or so you should see the virtual machine boot. The default password is <code>vagrant</code>.</p>
+<p>In the future you should be able to start the virtual machine directly from the VirtualBox GUI.</p>
+<h2 id="update-software">3. Update Software</h2>
+<div markdown="span" class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> This step is optional. Follow this step if you want to make sure you have the
+latest software.
 </div>
-<p>Now that VirtualBox is installed, you can add the virtual machine containing the development environment.</p>
-<h3 id="obtain-the-disk-image">3.1 Obtain the Disk Image</h3>
-<p>You can choose either to copy the disk image from the flash drive to your computer, or to download the disk image from the <a href="https://github.com/mtmk-ee/artemis-cubesat-kit/">Artemis repository</a> (recommended if your flash drive image is out of date).</p>
-<h3 id="unzip-the-disk-image">3.2 Unzip the Disk Image</h3>
-<h3 id="add-the-virtual-machine-to-virtualbox">3.3 Add the Virtual Machine to VirtualBox</h3>
-<p>First, click on the new button to add a new virtual machine.</p>
-<div align="center">
-<p><img align="center"
-src="/artemis-docs/resources/tutorials/setup/part2/home_new.png" style="width:100%;" /></p>
-</div>
-<p>You'll want to name the operating system something descriptive (e.g. Artemis Development Environment).
-Change the <em>Type</em> field to <em>Linux</em>, and the <em>Version</em> field to <em>Ubuntu (64-bit)</em> as shown below, and click <em>Next</em>.</p>
-<div align="center">
-<p><img align="center"
-src="/artemis-docs/resources/tutorials/setup/part2/new_vm.png" style="width:400px;" /></p>
-</div>
-<p>Now you have the option of setting how much of your computer's RAM will be allocated for the virtual machine. Setting this value too low means that the virtual machine will run slowly, while setting it too high could slow down could cause other issues. Using a value near the right end of the green zone is a good idea. After choosing your RAM value, click <em>Next</em>.</p>
-<div align="center">
-<p><img align="center"
-src="/artemis-docs/resources/tutorials/setup/part2/memory_size.png" style="width:400px;" /></p>
-</div>
-<p>Here you will be able to add the development environment disk image. Click <em>Use an existing virtual hard disk file</em>, then click the folder icon, then the <em>Add</em> button in the new window, and browse for the disk image (the <code>.vdi</code> file) you previously obtained. Click <em>Next</em>.</p>
-<div align="center">
-<p><img align="center"
-src="/artemis-docs/resources/tutorials/setup/part2/add_drive.png" style="width:600px;" /></p>
-</div>
-<p>Now that the virtual machine is installed, we should probably change a couple more settings. Select your new virtual machine on the left, and click on the <em>Settings</em> button at the top.</p>
-<div align="center">
-<p><img align="center"
-src="/artemis-docs/resources/tutorials/setup/part2/home_settings.png" style="width:100%;" /></p>
-</div>
-<p>In the System -&gt; Processor tab you can choose to allow the virtual machine to use multiple physical processors.
-In the Display -&gt; Screen tab you should enable the <em>Enable 3D Acceleration</em> option to allow rendering to be offloaded to your GPU.</p>
-<p>Now you can go back to the VirtualBox home view and click on the <em>Start</em> button to start the virtual machine.</p>
-<h4 id="logging-in">3.4 Logging In</h4>
-<p>After clicking the start button in the previous step, you should see the virtual machine booting.</p>
-<p>Once Ubuntu has booted, you should be met with a login screen. The default username is <em>osboxes</em>, and the default password is <em>osboxes.org</em></p>
-<div markdown="span" class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> For security, you may want to consider changing the password.
-</div>
-<h4 id="install-guest-additions">3.5 Install Guest Additions</h4>
-<p>Inside of Ubuntu, open up a new terminal by pressing <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>. If this doesn't work, you can also click on the apps menu (the grid of dots on the side of the screen), type in <em>Terminal</em>, and click on the application to run it.</p>
-<p>Type in the following commands, separated by pressing the <kbd>Enter</kbd> key.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
-<span class="nb">sudo </span>apt <span class="nb">install </span>build-essential dkms linux-headers-<span class="si">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="si">)</span>
+<p>From the virtual machine, open a new terminal (<kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>) and run the following command:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./update
 </code></pre></div></div>
-<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Until you finishing installing guest additions, copying and pasting between your host machine and virtual machine will not work.
-</div>
-<p>Next, click on the <em>Devices</em> menu at the top of the virtual machine, and click <em>Insert Guest Additions CD Image</em> at the bottom of the list, and click the <em>Run</em> button in the dialog that pops up. The program may take a few minutes to run, so feel free to go make some coffee.</p>
-<p>Once the program is finished installing guest additions, go ahead and reboot the virtual machine by clicking the power icon at the top right of the screen, click the power icon in the menu, and clicking <em>Restart</em>.</p>
-<p>Once Ubuntu boots up, you can log back in and verify that guest additions was installed successfully by entering the following command into a terminal:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsmod | <span class="nb">grep </span>vboxguest
-</code></pre></div></div>
-<p>If the installation was successful, you see output which looks like this (the numbers will probably be different):</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vboxguest             303104  2 vboxsf
-</code></pre></div></div>
-<br>
-<p>Now we can enable some handy functionality for the guest machine:</p>
-<ul>
-<li>To enable copying and pasting between the host and guest, click <em>Devices</em>-&gt;<em>Shared Clipboard</em>-&gt;<em>Bidirectional</em> at the top of the screen.</li>
-<li>To enable drag and drop between the host and guest, click <em>Devices</em>-&gt;<em>Drag and Drop</em>-&gt;<em>Bidirectional</em>.</li>
-<li>To enable automatic resizing of the guest display, click <em>View</em>-&gt;<em>Auto-resize Guest Display</em>.</li>
-</ul>
-<div markdown="span" class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When pasting text into a terminal window, the keyboard shortcut <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> is used. For copying text from a terminal window, the keyboard shortcut <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> is used.
-</div>
-<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There is currently an issue with VirtualBox on Windows machines which prevents you from dragging and dropping &quot;complex&quot; objects such as zip archives and directories. To get around this, you can set up a shared folder.
-</div>
+<p>You will be prompted whether or not you want to update various components. Entering <code>y</code> will overwrite the existing
+installations.</p>
 <h2 id="further-reading">Further Reading</h2>
 <ul>
 <li><a href="/artemis-docs/pages/documentation/other/development-environment.html">Artemis Development Environment</a></li>
@@ -869,7 +841,7 @@ In the Display -&gt; Screen tab you should enable the <em>Enable 3D Acceleration
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Hawaii Space Flight Laboratory. All rights reserved. <br />
- Site last generated: Aug 2, 2020 <br />
+ Site last generated: Aug 3, 2020 <br />
 <p><img src="/artemis-docs/resources/logos/hsfl.png" width="100px" alt="HSFL Logo"/></p>
                 </div>
             </div>

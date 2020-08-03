@@ -733,23 +733,26 @@ $('#toc').on('click', 'a', function() {
 </blockquote>
 <h2 id="introduction">Introduction</h2>
 <p>QtCreator is an IDE (integrated development environment) targeted at C/C++ developers, and is included in the <a href="/artemis-docs/pages/documentation/other/development-environment.html">Artemis Development Environment</a> by default.</p>
-<h2 id="creating-a-new-cosmos-project">Creating a New COSMOS Project</h2>
+<h2 id="create-a-new-cosmos-project">Create a New COSMOS Project</h2>
 <p>Open up the <code>~/cosmos/source/projects/</code> directory. This folder contains all COSMOS projects that you will write.</p>
 <p>Duplicate the project folder <code>simpleagent_template</code> and rename it as you wish. In this tutorial, we will use the project name <code>my_project</code>.</p>
 <div align="center">
 <p><img align="center"
 src="/artemis-docs/resources/tutorials/cosmos/part1/copy_template.png" style="width:80%;" /></p>
 </div>
-<blockquote>
-<p><strong><em>Note:</em></strong> Feel like grabbing a fresh copy of the template? Run the following in a terminal:</p>
+<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Feel like grabbing a fresh copy of the template? Run the following in a terminal:
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/cosmos/source/projects
 <span class="nv">$ </span>git clone https://github.com/mtmk-ee/simpleagent_template.git
 </code></pre></div></div>
-</blockquote>
+</div>
 <p>Open up QtCreator and go to <em>File</em> -&gt; <em>Open File or Project...</em>, and open the file <code>~/cosmos/source/projects/my_project/CMakeLists.txt</code>. This file contains the project configuration.</p>
 <div align="center">
 <p><img align="center"
 src="/artemis-docs/resources/tutorials/cosmos/part1/open_project_window.png" style="width:80%;" /></p>
+</div>
+<div markdown="span" class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If this is your first time working with the project or you have
+recently updated your software, you may be met with a <code>Configure Project</code> page.
+Just select the <code>ARM32</code> kit and deselect the <code>Desktop</code> kit, then click the <code>Configure Project</code> button.
 </div>
 <p>The project <code>simpleagent_template</code> will appear in the navigation pane on the left side of the window (you can always rename the project by editing the <code>CMakeLists.txt</code> file). Expand the project (double click), then expand the target <code>my_agent</code> and open the source file <code>my_agent.cpp</code>.</p>
 <p>You should now see the <code>my_agent.cpp</code> source code in the editor.</p>
@@ -808,7 +811,7 @@ src="/artemis-docs/resources/tutorials/cosmos/part1/open_file.png" style="width:
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Hawaii Space Flight Laboratory. All rights reserved. <br />
- Site last generated: Aug 2, 2020 <br />
+ Site last generated: Aug 3, 2020 <br />
 <p><img src="/artemis-docs/resources/logos/hsfl.png" width="100px" alt="HSFL Logo"/></p>
                 </div>
             </div>

@@ -675,7 +675,23 @@
 
     
 
-   <h2 id="install-dependencies">1. Install Dependencies</h2>
+   <h2 id="brief">Brief</h2>
+<p>The Artemis Development Environment is provided as an Ubuntu 18.04.4 image with necessary tools preinstalled.</p>
+<p>VirtualBox and Vagrant are used to ensure the development environment is cross-platform. VirtualBox is used for
+virtualization of operating systems, and Vagrant is used to set up the virtual machine in a mostly
+platform-independent manner.</p>
+<h3 id="why-linux">Why Linux?</h3>
+<p>Linux makes working with the kit software much easier, as the operating system as a whole is designed for developers.
+It is also fairly lightweight, meaning that unnecessary add-ons are stripped away so that the download size is
+minimal.</p>
+<h3 id="supported-operating-systems">Supported Operating Systems</h3>
+<p>The supported operating systems are essentially those that VirtualBox and Vagrant support:</p>
+<ul>
+<li>Windows</li>
+<li>macOS</li>
+<li>Linux</li>
+</ul>
+<h2 id="install-dependencies">1. Install Dependencies</h2>
 <h3 id="virtualbox">1.1 VirtualBox</h3>
 <p>VirtualBox is used to run the virtual machine used as the development environment. Get it <a href="https://www.virtualbox.org/wiki/Downloads">here</a>.</p>
 <h3 id="install-vagrant">1.2 Install Vagrant</h3>
@@ -685,32 +701,32 @@
 by opening up a command prompt (Windows) or a terminal (Linux/Mac) and running the following:</p>
 <pre><code>vagrant plugin install vagrant-vbguest
 </code></pre>
-<h2 id="set-up-the-vagrant-box">2. Set up the Vagrant Box</h2>
-<p>Download the development environment tools from here</p>
-<h3 id="download-the-artemis-box">2.1 Download the Artemis Box</h3>
-<p>Download the Vagrant box <a href="">here</a> to a place you want to run Vagrant from.</p>
-<h3 id="add-the-artemis-box">2.2 Add the Artemis Box</h3>
-<p>From a command prompt or terminal window, enter the following (using the path you downloaded the Vagrant box to):</p>
+<h2 id="set-up-the-artemis-box">2. Set up the Artemis Box</h2>
+<h3 id="add-the-box">2.1 Add the Box</h3>
+<p>Download the Vagrant box (artemis.box). From a command prompt or terminal window, enter the following (using the path you downloaded the Vagrant box to):</p>
 <pre><code>cd PATH/TO/VAGRANT/BOX
-vagrant box add artemis.box
+vagrant box add artemis artemis.box
 </code></pre>
-<h3 id="create-the-machine">2.3 Create the Machine</h3>
-<p>Next, enter the following (using the path you want to run the box from):</p>
+<p>You can delete the <code>artemis.box</code> file you downloaded if you wish.</p>
+<h3 id="create-the-virtual-machine">2.2 Create the Virtual Machine</h3>
+<p>Next, enter the following (replacing <code>PATH/TO/VM</code> with the folder you chose):</p>
 <pre><code>cd PATH/TO/VM
-vagrant init
-vagrant up
+vagrant init artemis
 </code></pre>
-<p>After a minute or so you should see the virtual machine boot.</p>
+<p>Download the <code>Vagrantfile</code> file to the same folder, overwriting the file created by the <code>vagrant init artemis</code> command.
+The new Vagrantfile will set up the virtual machine with necessary virtualization settings.</p>
+<h3 id="start-the-virtual-machine">2.3 Start the Virtual Machine</h3>
+<p>Next run the command:</p>
+<pre><code>vagrant up
+</code></pre>
+<p>After a minute or so you should see the virtual machine boot. The default password is <code>vagrant</code>.</p>
+<p>In the future you should be able to start the virtual machine directly from the VirtualBox GUI.</p>
 <h2 id="update-software">3. Update Software</h2>
 <div markdown="span" class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> This step is optional. Follow this step if you want to make sure you have the
 latest software.
 </div>
-<p>From the virtual machine, open a new terminal (<kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>) and run the following commands:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span>
-<span class="nv">$ </span>git clone https://github.com/mtmk-ee/artemis-cubesat-kit.git
-<span class="nv">$ </span><span class="nb">cd </span>artemis-cubesat-kit
-<span class="nv">$ </span><span class="nb">sudo chmod</span> +x update
-<span class="nv">$ </span>./update
+<p>From the virtual machine, open a new terminal (<kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>) and run the following command:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./update
 </code></pre></div></div>
 <p>You will be prompted whether or not you want to update various components. Entering <code>y</code> will overwrite the existing
 installations.</p>
@@ -737,7 +753,7 @@ installations.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Hawaii Space Flight Laboratory. All rights reserved. <br />
- Site last generated: Aug 2, 2020 <br />
+ Site last generated: Aug 3, 2020 <br />
 <p><img src="/artemis-docs/resources/logos/hsfl.png" width="100px" alt="HSFL Logo"/></p>
                 </div>
             </div>

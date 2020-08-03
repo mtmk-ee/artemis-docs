@@ -14,118 +14,100 @@ series:
   next: /pages/tutorials/setup/setup3.html
 ---
 
-## What You Need
+## Brief
 
-* A computer running Windows, macOS, or a Linux distribution
-  * As the tools used tend to eat up RAM and processing power, it is recommended you have a decently powerful computer
-* An internet connection
-* A USB flash drive with the development environment (included)
+The Artemis Development Environment is provided as an Ubuntu 18.04.4 image with necessary tools preinstalled.
 
-## 1. Install VirtualBox
+VirtualBox and Vagrant are used to ensure the development environment is cross-platform. VirtualBox is used for
+virtualization of operating systems, and Vagrant is used to set up the virtual machine in a mostly
+platform-independent manner.
 
-First you'll need to install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) on your computer. This is a neat program that allows you to run _entire operating systems_ (called virtual machines) running atop your actual one. We've decided to use VirtualBox for maximum portability, as it runs on most operating systems.
+### Why Linux?
 
-## 2. Download 7-Zip
-Since the disk image is compressed, you'll need to install [7-Zip](https://www.7-zip.org/download.html) to decompress it.
+Linux makes working with the kit software much easier, as the operating system as a whole is designed for developers.
+It is also fairly lightweight, meaning that unnecessary add-ons are stripped away so that the download size is
+minimal.
 
-## 3. Set up the Virtual Machine
+### Supported Operating Systems
 
-{% assign faq_note = "Having problems with this step? Visit the [FAQ page](" | append: site.baseurl | append: "/pages/faq.html#virtualbox)!" %}
-{% include tip.html content=faq_note %}
+The supported operating systems are essentially those that VirtualBox and Vagrant support:
 
-Now that VirtualBox is installed, you can add the virtual machine containing the development environment.
-
-### 3.1 Obtain the Disk Image
-You can choose either to copy the disk image from the flash drive to your computer, or to download the disk image from the [Artemis repository](https://github.com/mtmk-ee/artemis-cubesat-kit/) (recommended if your flash drive image is out of date).
-
-### 3.2 Unzip the Disk Image
-
-### 3.3 Add the Virtual Machine to VirtualBox
-
-First, click on the new button to add a new virtual machine.
+* Windows
+* macOS
+* Linux
 
 
-{% include image.html file="/resources/tutorials/setup/part2/home_new.png" width="100%" alt="" align="center" %}
+
+## 1. Install Dependencies
+
+### 1.1 VirtualBox
+VirtualBox is used to run the virtual machine used as the development environment. Get it [here](https://www.virtualbox.org/wiki/Downloads).
 
 
-You'll want to name the operating system something descriptive (e.g. Artemis Development Environment).
-Change the _Type_ field to _Linux_, and the _Version_ field to _Ubuntu (64-bit)_ as shown below, and click _Next_.
+### 1.2 Install Vagrant
 
+Vagrant is used to set up the virtual machine used as the development environment. Get it [here](https://www.vagrantup.com/downloads).
 
-{% include image.html file="/resources/tutorials/setup/part2/new_vm.png" width="400px" alt="" align="center" %}
+### 1.3 Install the Guest Additions Plugin
 
+The Vagrant guest additions plugin automatically installs VirtualBox guest additions into the virtual machine. Install it
+by opening up a command prompt (Windows) or a terminal (Linux/Mac) and running the following:
 
-Now you have the option of setting how much of your computer's RAM will be allocated for the virtual machine. Setting this value too low means that the virtual machine will run slowly, while setting it too high could slow down could cause other issues. Using a value near the right end of the green zone is a good idea. After choosing your RAM value, click _Next_.
-
-
-{% include image.html file="/resources/tutorials/setup/part2/memory_size.png" width="400px" alt="" align="center" %}
-
-
-Here you will be able to add the development environment disk image. Click _Use an existing virtual hard disk file_, then click the folder icon, then the _Add_ button in the new window, and browse for the disk image (the `.vdi` file) you previously obtained. Click _Next_.
-
-
-{% include image.html file="/resources/tutorials/setup/part2/add_drive.png" width="600px" alt="" align="center" %}
-
-
-Now that the virtual machine is installed, we should probably change a couple more settings. Select your new virtual machine on the left, and click on the _Settings_ button at the top.
-
-
-{% include image.html file="/resources/tutorials/setup/part2/home_settings.png" width="100%" alt="" align="center" %}
-
-
-In the System -> Processor tab you can choose to allow the virtual machine to use multiple physical processors.
-In the Display -> Screen tab you should enable the _Enable 3D Acceleration_ option to allow rendering to be offloaded to your GPU.
-
-Now you can go back to the VirtualBox home view and click on the _Start_ button to start the virtual machine.
-
-
-#### 3.4 Logging In
-After clicking the start button in the previous step, you should see the virtual machine booting.
-
-Once Ubuntu has booted, you should be met with a login screen. The default username is _osboxes_, and the default password is _osboxes.org_
-
-{% include warning.html content='For security, you may want to consider changing the password.' %}
-
-#### 3.5 Install Guest Additions
-
-Inside of Ubuntu, open up a new terminal by pressing <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>. If this doesn't work, you can also click on the apps menu (the grid of dots on the side of the screen), type in _Terminal_, and click on the application to run it.
-
-Type in the following commands, separated by pressing the <kbd>Enter</kbd> key.
-
-```bash
-sudo apt update
-sudo apt install build-essential dkms linux-headers-$(uname -r)
+```
+vagrant plugin install vagrant-vbguest
 ```
 
-{% include note.html content='Until you finishing installing guest additions, copying and pasting between your host machine and virtual machine will not work.' %}
+## 2. Set up the Artemis Box
 
-Next, click on the _Devices_ menu at the top of the virtual machine, and click _Insert Guest Additions CD Image_ at the bottom of the list, and click the _Run_ button in the dialog that pops up. The program may take a few minutes to run, so feel free to go make some coffee.
+### 2.1 Add the Box
 
-Once the program is finished installing guest additions, go ahead and reboot the virtual machine by clicking the power icon at the top right of the screen, click the power icon in the menu, and clicking _Restart_.
+Download the Vagrant box (artemis.box). From a command prompt or terminal window, enter the following (using the path you downloaded the Vagrant box to):
 
-Once Ubuntu boots up, you can log back in and verify that guest additions was installed successfully by entering the following command into a terminal:
-
-```bash
-lsmod | grep vboxguest
+```
+cd PATH/TO/VAGRANT/BOX
+vagrant box add artemis artemis.box
 ```
 
-If the installation was successful, you see output which looks like this (the numbers will probably be different):
+You can delete the `artemis.box` file you downloaded if you wish.
+
+### 2.2 Create the Virtual Machine
+Next, enter the following (replacing `PATH/TO/VM` with the folder you chose):
+
+```
+cd PATH/TO/VM
+vagrant init artemis
+```
+
+Download the `Vagrantfile` file to the same folder, overwriting the file created by the `vagrant init artemis` command.
+The new Vagrantfile will set up the virtual machine with necessary virtualization settings.
+
+### 2.3 Start the Virtual Machine
+
+Next run the command:
+
+```
+vagrant up
+```
+
+After a minute or so you should see the virtual machine boot. The default password is `vagrant`.
+
+In the future you should be able to start the virtual machine directly from the VirtualBox GUI.
+
+## 3. Update Software
+
+{% include tip.html content="This step is optional. Follow this step if you want to make sure you have the
+latest software." %}
+
+From the virtual machine, open a new terminal (<kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>) and run the following command:
+
 
 ```bash
-vboxguest             303104  2 vboxsf
+$ ./update
 ```
-<br>
 
-Now we can enable some handy functionality for the guest machine:
+You will be prompted whether or not you want to update various components. Entering `y` will overwrite the existing
+installations.
 
-* To enable copying and pasting between the host and guest, click _Devices_->_Shared Clipboard_->_Bidirectional_ at the top of the screen.
-* To enable drag and drop between the host and guest, click _Devices_->_Drag and Drop_->_Bidirectional_.
-* To enable automatic resizing of the guest display, click _View_->_Auto-resize Guest Display_.
-
-
-{% include tip.html content='When pasting text into a terminal window, the keyboard shortcut <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> is used. For copying text from a terminal window, the keyboard shortcut <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> is used.' %}
-
-{% include note.html content='There is currently an issue with VirtualBox on Windows machines which prevents you from dragging and dropping "complex" objects such as zip archives and directories. To get around this, you can set up a shared folder.' %}
 
 
 ## Further Reading
