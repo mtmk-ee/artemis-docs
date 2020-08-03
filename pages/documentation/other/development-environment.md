@@ -43,3 +43,15 @@ As updates are released, you'll be able to find new images hosted on our GitHub 
 
 
 
+## Built-In Scripts
+
+### Update Script
+
+This script updates the local copy of the cubesat kit repository. If you want to update your software, use this script.
+
+Location: home directory
+Usage:
+
+```bash
+$ ./update
+```

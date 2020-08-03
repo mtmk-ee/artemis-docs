@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" homepage">
-<title>Artemis CubeSat Kit | Artemis Cubesat Kit</title>
+<meta name="keywords" content=" software">
+<title>Development Environment | Artemis Cubesat Kit</title>
 <link rel="stylesheet" href="/artemis-docs/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -152,7 +152,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/artemis-docs/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Artemis CubeSat Kit">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Development Environment">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -188,7 +188,7 @@
           
           
           
-          <li class="active"><a title="Home" href="/artemis-docs/index.html">Home</a></li>
+          <li><a title="Home" href="/artemis-docs/index.html">Home</a></li>
           
           
           
@@ -604,7 +604,7 @@
           
           
           
-          <li><a title="Utility Scripts" href="/artemis-docs/pages/documentation/other/scripts.html">Utility Scripts</a></li>
+          <li class="active"><a title="Utility Scripts" href="/artemis-docs/pages/documentation/other/scripts.html">Utility Scripts</a></li>
           
           
           
@@ -684,7 +684,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Artemis CubeSat Kit</h1>
+   <h1 class="post-title-main">Development Environment</h1>
 </div>
 
 
@@ -694,20 +694,86 @@
    
 
     
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
 
 
     
 
-   <h2 id="welcome">Welcome!</h2>
-<p>Here you'll find documentation and tutorials for the Artemis Cubesat Kit, a low-cost kit containing all the necessary subsystems for a 1U cubesat. For more information on the project itself, visit the <a href="http://leonidas-b.hsfl.hawaii.edu/wordpress-5.0.1/artemis-2-2/" target="_blank" rel="noopener">project website</a></p>
-<h2 id="what-now">What Now?</h2>
-<div markdown="span" class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Before doing anything, make sure to review the
-<a href="pages/safety-procedures.html">safety procedures</a> for working with the hardware.
+   <h2 id="brief">Brief</h2>
+<p>There are several shell scripts provided in the Artemis Cubesat Kit repository which take care of otherwise-tedious
+operations. To run these scripts, you should first change the working directory of your terminal:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/artemis-cubesat-kit/scripts
+</code></pre></div></div>
+<h2 id="utilities">Utilities</h2>
+<h3 id="launch-cloud9-ide">Launch Cloud9 IDE</h3>
+<p>Usage: <code>./cloud9</code></p>
+<p>Description:</p>
+<p>This script launches the Cloud9 IDE in a new firefox tab.</p>
+<h3 id="launch-cosmos-web">Launch COSMOS Web</h3>
+<p>Usage: <code>./cosmos-web [-s]</code></p>
+<p>Description:</p>
+<p>This script runs the tools needed to operate COSMOS Web. If the <code>-s</code> flag is not present, the script will
+run all of the tools in the same terminal window. If the <code>-s</code> flag is present, the script will open
+a new terminal window for one of the processes.</p>
+<h2 id="deploying-software">Deploying Software</h2>
+<h3 id="deploy-agents">Deploy Agents</h3>
+<p>Usage: <code>./deploy-agents</code></p>
+<p>Description:</p>
+<p>This script copies the agent executable files from <code>~/cosmos/source/projects/beaglebone/build-arm32/bin</code> to the
+BeagleBone under the folder <code>~/agents</code>.</p>
+<p>Internally this script uses the <code>rsync</code> command.</p>
+<h3 id="deploy-raspberry-pi-software">Deploy Raspberry Pi Software</h3>
+<p>Usage: <code>./deploy-raspi</code></p>
+<p>Description:</p>
+<p>This script copies the Raspberry Pi software from <code>~/software/RaspberryPi</code> to the Raspberry Pi under the folder
+<code>~/rasberry-pi</code>.</p>
+<p>Internally this script uses the <code>rsync</code> command to copy the folder to a temporary folder on the BeagleBone, then calls
+<code>rsync</code> on the BeagleBone using <code>ssh</code> to copy the temporary folder to the Raspberry Pi.</p>
+<h2 id="updating-software">Updating Software</h2>
+<h3 id="update-agents">Update Agents</h3>
+<p>Usage: <code>./update-agents</code></p>
+<p>This script overwrites the existing BeagleBone COSMOS project under <code>~/cosmos/source/projects/beaglebone</code> using the
+latest software from the repository.</p>
+<h3 id="update-raspberry-pi-software">Update Raspberry Pi Software</h3>
+<p>Usage: <code>./update-raspi</code></p>
+<p>This script overwrites the existing Raspberry Pi software under <code>~/software/RaspberryPi</code> using the
+latest software from the repository.</p>
+<h3 id="update-cosmos-routes">Update COSMOS Routes</h3>
+<p>Usage: <code>./update-routes</code></p>
+<p>This script overwrites the existing COSMOS Web routes using the latest software from the repository. You should call
+this script if you are also using the <code>update-agents</code> script.</p>
+<h2 id="installation">Installation</h2>
+<div markdown="span" class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> These scripts are meant for those not using the development environment,
+and should not be called if you are using it!
 </div>
-<p>If you are just getting started with a cubesat kit of your own, you should definitely check out the <em>Getting Started</em> set of tutorials over on the sidebar.</p>
-<p>After getting set up, you may want to move on to the <em>Payload Script</em> series of tutorials, demonstrating how you can write your own payload scripts.</p>
-<p>After getting more acquainted with the kit, you can always check out the documentation to reference behavior and usage, or just to gather ideas on what you can do!</p>
-<p>Running into issues? Try checking out the <em>FAQ</em> page over on the sidebar, or submitting an issue on the GitHub repo linked at the top of the page.</p>
+<h3 id="install-cosmos">Install COSMOS</h3>
+<p>Usage: <code>./install-cosmos</code></p>
+<p>Installs COSMOS, giving the option of switching to the 'dev' branch.</p>
+<h3 id="install-cosmos-web">Install COSMOS Web</h3>
+<p>Usage: <code>./install-cosmos-web</code></p>
+<p>Installs COSMOS Web and its dependencies.</p>
 
 
     <div class="tags">
