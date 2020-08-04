@@ -16,10 +16,10 @@ series:
 
 ## Introduction
 
-The Artemis Development Environment is provided as an Ubuntu 18.04.4 image with necessary tools preinstalled.
+The Artemis Development Environment is provided as an Ubuntu 18.04.4 Vagrant box with necessary tools preinstalled.
 
 VirtualBox and Vagrant are used to ensure the development environment is cross-platform. VirtualBox is used for
-virtualization of operating systems, and Vagrant is used to set up the virtual machine in a mostly
+virtualization of operating systems, and Vagrant is used to set up the virtual machine in a (mostly)
 platform-independent manner.
 
 ### Why Linux?

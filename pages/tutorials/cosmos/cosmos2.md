@@ -14,10 +14,12 @@ series:
     next: /pages/tutorials/cosmos/cosmos3.html
 ---
 
+{% capture tip %}Before you start this tutorial, you should check out the
+[COSMOS documentation]({{site.folder_docs_cosmos}}/cosmos.html) for an explanation on the 
+concepts used here.
+{% endcapture %}
+{% include tip.html content=tip %}
 
-> **_Tip:_** before you start this tutorial, you should check out the
-> [COSMOS documentation]({{site.folder_docs_cosmos}}/cosmos.html) for an explanation on the 
-> concepts used here.
 
 ## Introduction
 
@@ -27,9 +29,14 @@ SimpleAgent is a class that encapsulates the regular [COSMOS agents]({{site.fold
 ### SimpleAgent Devices
 A SimpleAgent _device_ is a C++ object which can hold certain properties. The types of properties a device can have depend on the type of device. For example, a `Battery` device has a `capacity` property, but you can bet a `TemperatureSensor` device doesn't have a `capacity` property.
 
-> **_Note:_**  a SimpleAgent device does not handle hardware directly, and only stores properties. Any hardware interaction with a _physical_ device is up to you to code.
+{% include note.html content="A SimpleAgent device does not handle hardware directly, and only stores properties.
+Any hardware interaction with a _physical_ device is up to you to code." %}
 
-> **_Note:_** for a complete listing of available devices and their properties, visit the [Device documentation]({{site.folder_docs_utility}}/simpleagent-devices.html).
+{% capture tip %}
+For a complete listing of available devices and their properties, visit the
+[Device documentation]({{site.folder_docs_utility}}/simpleagent-devices.html).
+{% endcapture %}
+{% include tip.html content=tip %}
 
 ## Using SimpleAgent
 Now that we've gotten definitions out of the way, we can start by creating a SimpleAgent.
@@ -81,7 +88,10 @@ my_sensor->SetCustomProperty<bool>("is_initialized", true);
 // ...
 bool is_initialized = my_sensor->GetCustomProperty<bool>("is_initialized");
 ```
-> **_Note:_** it is _very important_ that you retrieve the custom property using the same type (`bool` in this case) you used to set it. If you don't do this, then an exception _will_ be thrown.
+
+{% include important.html content="it is _very important_ that you retrieve the custom property
+using the same type (`bool` in this case) you used to set it. If you don't do this,
+then an exception _will_ be thrown." %}
 
 If you find that a device you'd like to use isn't supported, you can always use the [CustomDevice]({{site.folder_docs_utility}}/simpleagent-devices.html#customdevice) device type. This device only supports a few post-able properties, but you can use as many custom properties as you wish.
 
@@ -122,7 +132,9 @@ The `StartLoop` function handles any waiting that may be necessary (e.g. if your
 delete agent;
 ```
 
-> **_Note:_** you should _never_ delete devices returned by the agent's `NewDevice` function, as this will cause issues.
+
+{% include important.html content="You should _never_ delete devices returned by the agent's
+`NewDevice` function, as this will cause issues." %}
 
 ## Using Requests
 
@@ -151,7 +163,11 @@ agent->AddRequest({"alias_1", "alias_2", "alias_3"}, MyRequestWithArguments, "A 
 
 This will add our request function with the aliases `alias_1`, `alias_2`, and `alias_3`. You can add as many aliases as you wish and, as before, you can choose to omit the synopsis and detailed description strings.
 
-> **_Note:_** the string returned from a request function should never be empty (`""`). An empty response string is interpreted as failure to call the request. If you don't care about the value returned, you can always just return a space character (`" "`), or any other random non-empty string.
+
+{% include important.html content="The string returned from a request function should never be empty.
+An empty response string is interpreted as failure to call the request. If you don't care about the value returned,
+you can always just return a space character, or any other random non-empty string." %}
+
 
 ### Calling a Request From the Terminal
 Once your agent is running, you can call a previously-added request from a terminal. For example, if we've added a request called `my_request` to an agent called `my_agent` running on the node `cubesat`, we can run the following command to call this request (optionally providing arguments `argument1` and `argument2`, which get redirected to the request function):
@@ -198,7 +214,8 @@ This will display all available requests in a nicely formatted table, along with
     (clipped)
 ```
 
-> **_Note:_** there are several requests used by COSMOS and SimpleAgent which are added by default. Any requests that you add will be listed at the _bottom_ of this table.
+{% include note.html content="There are several requests used by COSMOS and SimpleAgent which are added by default.
+Any requests that you add will be listed at the _bottom_ of this table." %}
 
 ## Communicating With Other Agents
 When working with many agents, you will often need to send requests back and forth between agents running in separate programs. SimpleAgent provides a friendly way of doing this using the class `RemoteAgent`.
@@ -211,7 +228,12 @@ static RemoteAgent other_agent = agent->FindAgent("other_agent", "cubesat")
 
 In the code above, we attempt to find the agent named `other_agent` running on the node `cubesat`. You don't need to provide the node name; if the node name is omitted, then the node that our `agent` is running on will be used by default.
 
-> **_Note:_** the `static` keyword is used here. This means that the variable `other_agent` will be initialized _only once_ when the function containing this variable is called. If this keyword was not included, the `FindAgent` function would be executed every time this code runs, and could possibly hang up your program (the default timeout is 2 seconds). Unless you know what you're doing, the `static` keyword should probably be used.
+{% include note.html content="The `static` keyword is used here. This means that the variable `other_agent`
+will be initialized _only once_ when the function containing this variable is called. If this keyword was not
+included, the `FindAgent` function would be executed every time this code runs, and could possibly hang up your
+program (the default timeout is 2 seconds). Unless you know what you're doing, the `static` keyword should
+probably be used." %}
+
 
 After calling the `FindAgent` function, you should check whether or not the remote agent was found:
 
@@ -301,7 +323,7 @@ int main() {
     my_sensor->Post(my_sensor->temperature = 0); // Set and post the temperature property
     
     // Add a request that can be called externally
-    agent->AddRequest("say_hi", SayHi, "Gives you a friendly greeting", "Prints a greeting inside the agent and returns the greeting as well");
+    agent->AddRequest("say_hi", SayHi, "Gives you a friendly greeting");
     
     // Finish setting up the SimpleAgent
     agent->Finalize(); // Let the agent know we're done posting properties
@@ -350,7 +372,7 @@ Node Properties
 
 This output is all due to calling the `DebugPrint` function. All of the available COSMOS names are listed next to the property names (for example, `device_tsen_temp_005`). The `say_hi` request is also listed in this tree.
 
-> **_Note:_** there are a couple requests, `getproperty` and `print`, that are added by default.
+{% include note.html content="There are a couple requests, `getproperty` and `print`, that are added by default." %}
 
 We can call the `say_hi` request externally from a terminal window by running:
 

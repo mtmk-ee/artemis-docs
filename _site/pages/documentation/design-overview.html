@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" python, library">
-<title>BeagleBone Class (Raspberry Pi) | Artemis Cubesat Kit</title>
+<meta name="keywords" content="software,  software">
+<title>Design Overview | Artemis Cubesat Kit</title>
 <link rel="stylesheet" href="/artemis-docs/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -152,7 +152,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/artemis-docs/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="BeagleBone Class (Raspberry Pi)">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Design Overview">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -195,7 +195,7 @@
           
           
           
-          <li><a title="Design Overview" href="/artemis-docs/pages/documentation/design-overview.html">Design Overview</a></li>
+          <li class="active"><a title="Design Overview" href="/artemis-docs/pages/documentation/design-overview.html">Design Overview</a></li>
           
           
           
@@ -540,7 +540,7 @@
                   
                   
                   
-                  <li class="active"><a title="BeagleBone Class" href="/artemis-docs/pages/documentation/raspi-library/beaglebone-class.html">BeagleBone Class</a></li>
+                  <li><a title="BeagleBone Class" href="/artemis-docs/pages/documentation/raspi-library/beaglebone-class.html">BeagleBone Class</a></li>
                   
                   
                   
@@ -684,7 +684,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">BeagleBone Class (Raspberry Pi)</h1>
+   <h1 class="post-title-main">Design Overview</h1>
 </div>
 
 
@@ -721,210 +721,82 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <!-- ==================== Quick Details ==================== -->
-<h2>Quick Details</h2>
-
-
-
-
-
-
-<table>
-    <thead>
-        <tr>
-            <th>Property</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Class</td>
-            <td><code>BeagleBone</code></td>
-        </tr>
-        <tr>
-            <td>Namespace</td>
-            <td><code>artemis</code></td>
-        </tr>
-        <!-- ============================== Files ============================== -->
-        <tr>
-            <!-- For the first row, set the rowspan to however many hardware elements there are -->
-            <td rowspan=1 style="vertical-align : middle;">
-                <!-- Check if "File" should be plural -->
-                 File 
-            </td>
-            <td>
-                <!-- Add the first file -->
-                <a href="https://github.com/mtmk-ee/artemis-cubesat-kit/blob/master/Software/RaspberryPi/artemis/beaglebone.py" target="_blank"
-                    rel="noopener">
-                    beaglebone.py
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-<!-- ==================== Page Contents ==================== -->
-<h2 id="description">Description</h2>
-<p>The BeagleBone class is used to communicate between the Raspberry Pi and the BeagleBone.</p>
-<p>Internally SSH is used to transfer information between the two onboard computers.</p>
-
-
-
-<!-- ==================== Member Functions ==================== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Functions</h2>
-
-<div class="panel panel-default">
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="panel-heading">
-    <h4 class="panel-title">
-        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true">Copy File to BeagleBone</a>
-    </h4>
-</div>
-<div id="collapse5" class="panel-collapse noCrossRef collapse in"  aria-expanded="true">
-<div class="panel-body">
-
-<strong>Declaration: </strong> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">copy_to</span><span class="p">(</span><span class="n">source_file</span><span class="p">,</span> <span class="n">destination_file</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
-</code></pre></div></div>
-
-<br><br>
-<p>Copies <code>source_file</code> from the Raspberry Pi to <code>destination_file</code> on the BeagleBone. If the destination file is <code>None</code>, then it will be placed into the incoming folder on the BeagleBone, and the file name will be the same as the source file.</p>
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<div class="panel-heading">
-    <h4 class="panel-title">
-        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true">Copy File From BeagleBone</a>
-    </h4>
-</div>
-<div id="collapse6" class="panel-collapse noCrossRef collapse in"  aria-expanded="true">
-<div class="panel-body">
-
-<strong>Declaration: </strong> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">copy_from</span><span class="p">(</span><span class="n">source_file</span><span class="p">,</span> <span class="n">destination_file</span><span class="p">)</span>
-</code></pre></div></div>
-
-<br><br>
-<p>Copies <code>source_file</code> on the BeagleBone to <code>destination_file</code> on the Raspberry Pi.</p>
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<div class="panel-heading">
-    <h4 class="panel-title">
-        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true">Transmit File</a>
-    </h4>
-</div>
-<div id="collapse7" class="panel-collapse noCrossRef collapse in"  aria-expanded="true">
-<div class="panel-body">
-
-<strong>Declaration: </strong> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">transmit_file</span><span class="p">(</span><span class="n">source_file</span><span class="p">,</span> <span class="n">outgoing_file_name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</code></pre></div></div>
-
-<br><br>
-<p>Marks the file <code>source_file</code> for transmission, renaming it to <code>outgoing_file_name</code>. If <code>None</code> is provided for the second argument, then the file name is unchanged.</p>
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<div class="panel-heading">
-    <h4 class="panel-title">
-        <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="true">System Command</a>
-    </h4>
-</div>
-<div id="collapse8" class="panel-collapse noCrossRef collapse in"  aria-expanded="true">
-<div class="panel-body">
-
-<strong>Declaration: </strong> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">system</span><span class="p">(</span><span class="n">sys_call</span><span class="p">)</span>
-</code></pre></div></div>
-
-<br><br>
-<p>Runs a shell command on the BeagleBone and returns the output string.</p>
-
-
-</div>
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   <h2 id="introduction">Introduction</h2>
+<p>The design of a cubesat is broken down into several subsystems, each corresponding to a major
+grouping of necessary functionality. The subsystems in this kit are briefly explained below.</p>
+<h2 id="thermal-control-system-tcs">Thermal Control System (TCS)</h2>
+<p>The purpose of the TCS is to regulate temperatures inside of the satellite. This subsystem is critical,
+as virtually all of the electrical components can only operate within a certain range of temperatures.</p>
+<p>In this kit the limiting temperature range is that of the battery pack, which has a minimum charging
+temperature of 0°C and a maximum charging temperature of about 45°C.</p>
+<p>In this kit, the TCS uses five temperature sensors (ADT7311 / BMX160) on each board to determine when it is
+appropriate to activate the heater, located on the battery pack.</p>
+<h2 id="attitude-determination-and-control-system-adcs">Attitude Determination and Control System (ADCS)</h2>
+<p>The purpose of the ADCS is to determine attitude and location, and adjust the orientation of the satellite
+accordingly by means of actuators (magnetic torque rods, reaction wheels, etc.). In this kit there
+are no built-in actuators.</p>
+<p>The ADCS in this kit is comprised of an IMU (BMX160), coarse sun sensors (OPT3001), and a GPS module.
+The GPS module is used to determine the geographic coordinates, altitude, and velocity of the satellite.
+Although there is no attitude determination performed by default, the sun sensors and IMU may be used
+in user-written software for this purpose.</p>
+<h2 id="communications-subsystem-comms">Communications Subsystem (COMMS)</h2>
+<p>The purpose of the COMMS is to transmit and receive information remotely once the the satellite
+is in orbit. Without a working COMMS subsystem, the satellite cannot meaningfully perform its
+tasks once out of the reach of engineers.</p>
+<p>The COMMS subsystem in this kit is comprised of a longe-range radio transceiver (RFM98PW) and
+an antenna.</p>
+<h2 id="electrical-power-system-eps">Electrical Power System (EPS)</h2>
+<p>The purpose of the EPS is to manage the storage and distribution of power throughout the satellite.</p>
+<p>The collection of electrical components handling power distribution is known as
+a <em>Power Distribution Unit</em>, or PDU. The circuit board holding the PDU is known simply as the PDU board.
+The PDU board used in this kit is designed by Hawaii Space Flight Laboratory.</p>
+<p>In this kit, the EPS subsystem is the generates power through solar cells, and stores them in a
+battery pack (LG MJ1 18650). The board containing the batteries is known as the battery board,
+which is designed by PyCubed in this kit.</p>
+<h2 id="onboard-computer-system-obcs">Onboard Computer System (OBCS)</h2>
+<p>The purpose of the OBCS is to process information supplied by the other subsystems and determine
+appropriate actions through the flight software. In this kit there are three onboard computers:</p>
+<p>The BeagleBone Black Industrial (BeagleBone for short) is the primary OBC running flight software
+designed using COSMOS.</p>
+<p>The Raspberry Pi Zero (Raspberry Pi or Raspi for short) is the payload OBC used as an
+interface for various user-defined payloads. Scripts written for the Raspberry Pi handle
+interaction with the payload and refer necessary information to the BeagleBone. Communication is
+performed over a USB/SSH connection between the two OBCs.</p>
+<p>The PyCubed mainboard controller (PyCubed for short) is the OBC used to interface with the components
+on the PyCubed mainboard (e.g. IMU, GPS, radio transceiver, etc.). Scripts written for the PyCubed
+handle interaction with the various components. Information such as radio packets and sensor data
+is relayed between the BeagleBone and PyCubed over a serial connection.</p>
+<h2 id="flight-software">Flight Software</h2>
+<p>In a satellite, flight software refers to the software written for an OBC. The flight software in this kit
+is broken into three major parts corresponding to the three OBCs.</p>
+<p>The BeagleBone flight software is comprised of several COSMOS agents, each of which handle
+interaction with a hardware component connected to the BeagleBone.</p>
+<p>The Raspberry Pi flight software is comprised of a Python package (known here as the Artemis Raspberry Pi
+or ARP library) used to gather information from hardware components, and one or more payload script using this package.</p>
+<p>The PyCubed flight software is comprised of a Python package (known here as the Artemis PyCubed or APC library)
+used to communicate with the BeagleBone, and the main script using this package.</p>
+<h2 id="structure-and-mechanisms">Structure and Mechanisms</h2>
+<p>The structure subsystem involves the physical assembly of the satellite, while the mechanisms subsystem
+involves the mechanical mechanisms built into the structure (e.g. antenna deployment and deployment switches).</p>
+<p>The structure and mechanisms must adhere to strict requirements in order to be accepted by a launch provider.
+The structure and mechanisms of this kit are designed to follow Nanoracks and Cubesat Launch Initiative (CLSI)
+requirements.</p>
+<h2 id="payload">Payload</h2>
+<p>A payload is the device included in a satellite which performs its primary task. This is often chosen to collect data
+in response to a research question, and may be defined by stakeholders of the mission.</p>
+<p>The payload device included in this kit is the Raspberry Pi Camera Module V2, an optical and infrared imaging
+camera. While this payload may be switched out with another at the user's discretion, there is no additional
+software provided with this kit meant to control other payloads. Any additional software functionality required
+is up to the user to implement.</p>
 
 
     <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        
         
     </div>
 

@@ -90,6 +90,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/pages/documentation/design-overview.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/pages/documentation/other/development-environment.html</loc>
   </url>
   

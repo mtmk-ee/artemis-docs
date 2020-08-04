@@ -195,6 +195,13 @@
           
           
           
+          <li><a title="Design Overview" href="/artemis-docs/pages/documentation/design-overview.html">Design Overview</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="FAQ" href="/artemis-docs/pages/faq.html">FAQ</a></li>
           
           
@@ -745,21 +752,20 @@ $('#toc').on('click', 'a', function() {
 
 
 <!-- ==================== Page Contents ==================== -->
-<blockquote>
-<p><strong><em>Tip:</em></strong> before you start this tutorial, you should check out the
+<div markdown="span" class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Before you start this tutorial, you should check out the
 <a href="/artemis-docs/pages/documentation/cosmos/cosmos.html">COSMOS documentation</a> for an explanation on the
-concepts used here.</p>
-</blockquote>
+concepts used here.
+</div>
 <h2 id="introduction">Introduction</h2>
 <p>SimpleAgent is a class that encapsulates the regular <a href="/artemis-docs/pages/documentation/cosmos/cosmos.html#agents">COSMOS agents</a>. While COSMOS agents can be difficult to use, SimpleAgent is designed with the user in mind. Here we'll be referring to SimpleAgent as an agent -- a SimpleAgent really is just a COSMOS agent; only the way you use it changes.</p>
 <h3 id="simpleagent-devices">SimpleAgent Devices</h3>
 <p>A SimpleAgent <em>device</em> is a C++ object which can hold certain properties. The types of properties a device can have depend on the type of device. For example, a <code>Battery</code> device has a <code>capacity</code> property, but you can bet a <code>TemperatureSensor</code> device doesn't have a <code>capacity</code> property.</p>
-<blockquote>
-<p><strong><em>Note:</em></strong>  a SimpleAgent device does not handle hardware directly, and only stores properties. Any hardware interaction with a <em>physical</em> device is up to you to code.</p>
-</blockquote>
-<blockquote>
-<p><strong><em>Note:</em></strong> for a complete listing of available devices and their properties, visit the <a href="/artemis-docs/pages/documentation/utility-classes/simpleagent-devices.html">Device documentation</a>.</p>
-</blockquote>
+<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> A SimpleAgent device does not handle hardware directly, and only stores properties.
+Any hardware interaction with a <em>physical</em> device is up to you to code.
+</div>
+<div markdown="span" class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For a complete listing of available devices and their properties, visit the
+<a href="/artemis-docs/pages/documentation/utility-classes/simpleagent-devices.html">Device documentation</a>.
+</div>
 <h2 id="using-simpleagent">Using SimpleAgent</h2>
 <p>Now that we've gotten definitions out of the way, we can start by creating a SimpleAgent.</p>
 <h3 id="creating-the-simpleagent">Creating the SimpleAgent</h3>
@@ -788,9 +794,10 @@ concepts used here.</p>
 <span class="c1">// ...</span>
 <span class="kt">bool</span> <span class="n">is_initialized</span> <span class="o">=</span> <span class="n">my_sensor</span><span class="o">-&gt;</span><span class="n">GetCustomProperty</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"is_initialized"</span><span class="p">);</span>
 </code></pre></div></div>
-<blockquote>
-<p><strong><em>Note:</em></strong> it is <em>very important</em> that you retrieve the custom property using the same type (<code>bool</code> in this case) you used to set it. If you don't do this, then an exception <em>will</em> be thrown.</p>
-</blockquote>
+<div markdown="span" class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> it is <em>very important</em> that you retrieve the custom property
+using the same type (<code>bool</code> in this case) you used to set it. If you don't do this,
+then an exception <em>will</em> be thrown.
+</div>
 <p>If you find that a device you'd like to use isn't supported, you can always use the <a href="/artemis-docs/pages/documentation/utility-classes/simpleagent-devices.html#customdevice">CustomDevice</a> device type. This device only supports a few post-able properties, but you can use as many custom properties as you wish.</p>
 <h3 id="setting-node-properties">Setting Node Properties</h3>
 <p>For properties about the COSMOS node that don't fit into a device, you can use node properties:</p>
@@ -814,9 +821,9 @@ concepts used here.</p>
 <p>The <code>StartLoop</code> function handles any waiting that may be necessary (e.g. if your agent performs its tasks faster than the time set by <code>SetLoopPeriod</code>), and whether or not the agent needs to shut down. After this loop you should probably wrap up any necessary hardware interaction, and also delete the SimpleAgent you've created:</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">delete</span> <span class="n">agent</span><span class="p">;</span>
 </code></pre></div></div>
-<blockquote>
-<p><strong><em>Note:</em></strong> you should <em>never</em> delete devices returned by the agent's <code>NewDevice</code> function, as this will cause issues.</p>
-</blockquote>
+<div markdown="span" class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> You should <em>never</em> delete devices returned by the agent's
+<code>NewDevice</code> function, as this will cause issues.
+</div>
 <h2 id="using-requests">Using Requests</h2>
 <h3 id="adding-requests">Adding Requests</h3>
 <p>A request function can take on one of two signatures (i.e. the form of the function):</p>
@@ -834,9 +841,10 @@ concepts used here.</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span><span class="o">-&gt;</span><span class="n">AddRequest</span><span class="p">({</span><span class="s">"alias_1"</span><span class="p">,</span> <span class="s">"alias_2"</span><span class="p">,</span> <span class="s">"alias_3"</span><span class="p">},</span> <span class="n">MyRequestWithArguments</span><span class="p">,</span> <span class="s">"A synopsis"</span><span class="p">,</span> <span class="s">"A detailed description"</span><span class="p">);</span>
 </code></pre></div></div>
 <p>This will add our request function with the aliases <code>alias_1</code>, <code>alias_2</code>, and <code>alias_3</code>. You can add as many aliases as you wish and, as before, you can choose to omit the synopsis and detailed description strings.</p>
-<blockquote>
-<p><strong><em>Note:</em></strong> the string returned from a request function should never be empty (<code>&quot;&quot;</code>). An empty response string is interpreted as failure to call the request. If you don't care about the value returned, you can always just return a space character (<code>&quot; &quot;</code>), or any other random non-empty string.</p>
-</blockquote>
+<div markdown="span" class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> The string returned from a request function should never be empty.
+An empty response string is interpreted as failure to call the request. If you don't care about the value returned,
+you can always just return a space character, or any other random non-empty string.
+</div>
 <h3 id="calling-a-request-from-the-terminal">Calling a Request From the Terminal</h3>
 <p>Once your agent is running, you can call a previously-added request from a terminal. For example, if we've added a request called <code>my_request</code> to an agent called <code>my_agent</code> running on the node <code>cubesat</code>, we can run the following command to call this request (optionally providing arguments <code>argument1</code> and <code>argument2</code>, which get redirected to the request function):</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>agent cubesat my_agent my_request argument1 argument2
@@ -872,18 +880,21 @@ concepts used here.</p>
 
     (clipped)
 </code></pre>
-<blockquote>
-<p><strong><em>Note:</em></strong> there are several requests used by COSMOS and SimpleAgent which are added by default. Any requests that you add will be listed at the <em>bottom</em> of this table.</p>
-</blockquote>
+<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There are several requests used by COSMOS and SimpleAgent which are added by default.
+Any requests that you add will be listed at the <em>bottom</em> of this table.
+</div>
 <h2 id="communicating-with-other-agents">Communicating With Other Agents</h2>
 <p>When working with many agents, you will often need to send requests back and forth between agents running in separate programs. SimpleAgent provides a friendly way of doing this using the class <code>RemoteAgent</code>.</p>
 <p>To find another agent you can use SimpleAgent's <code>FindAgent</code> function:</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="n">RemoteAgent</span> <span class="n">other_agent</span> <span class="o">=</span> <span class="n">agent</span><span class="o">-&gt;</span><span class="n">FindAgent</span><span class="p">(</span><span class="s">"other_agent"</span><span class="p">,</span> <span class="s">"cubesat"</span><span class="p">)</span>
 </code></pre></div></div>
 <p>In the code above, we attempt to find the agent named <code>other_agent</code> running on the node <code>cubesat</code>. You don't need to provide the node name; if the node name is omitted, then the node that our <code>agent</code> is running on will be used by default.</p>
-<blockquote>
-<p><strong><em>Note:</em></strong> the <code>static</code> keyword is used here. This means that the variable <code>other_agent</code> will be initialized <em>only once</em> when the function containing this variable is called. If this keyword was not included, the <code>FindAgent</code> function would be executed every time this code runs, and could possibly hang up your program (the default timeout is 2 seconds). Unless you know what you're doing, the <code>static</code> keyword should probably be used.</p>
-</blockquote>
+<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The <code>static</code> keyword is used here. This means that the variable <code>other_agent</code>
+will be initialized <em>only once</em> when the function containing this variable is called. If this keyword was not
+included, the <code>FindAgent</code> function would be executed every time this code runs, and could possibly hang up your
+program (the default timeout is 2 seconds). Unless you know what you're doing, the <code>static</code> keyword should
+probably be used.
+</div>
 <p>After calling the <code>FindAgent</code> function, you should check whether or not the remote agent was found:</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span> <span class="n">other_agent</span><span class="p">.</span><span class="n">Connect</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Do something here that depends on the other agent...</span>
@@ -992,7 +1003,7 @@ concepts used here.</p>
     <span class="n">my_sensor</span><span class="o">-&gt;</span><span class="n">Post</span><span class="p">(</span><span class="n">my_sensor</span><span class="o">-&gt;</span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Set and post the temperature property</span>
     
     <span class="c1">// Add a request that can be called externally</span>
-    <span class="n">agent</span><span class="o">-&gt;</span><span class="n">AddRequest</span><span class="p">(</span><span class="s">"say_hi"</span><span class="p">,</span> <span class="n">SayHi</span><span class="p">,</span> <span class="s">"Gives you a friendly greeting"</span><span class="p">,</span> <span class="s">"Prints a greeting inside the agent and returns the greeting as well"</span><span class="p">);</span>
+    <span class="n">agent</span><span class="o">-&gt;</span><span class="n">AddRequest</span><span class="p">(</span><span class="s">"say_hi"</span><span class="p">,</span> <span class="n">SayHi</span><span class="p">,</span> <span class="s">"Gives you a friendly greeting"</span><span class="p">);</span>
     
     <span class="c1">// Finish setting up the SimpleAgent</span>
     <span class="n">agent</span><span class="o">-&gt;</span><span class="n">Finalize</span><span class="p">();</span> <span class="c1">// Let the agent know we're done posting properties</span>
@@ -1034,9 +1045,8 @@ Node Properties
 |       | Property 'UTC' (aka node_utc): 59053.871956
 </code></pre>
 <p>This output is all due to calling the <code>DebugPrint</code> function. All of the available COSMOS names are listed next to the property names (for example, <code>device_tsen_temp_005</code>). The <code>say_hi</code> request is also listed in this tree.</p>
-<blockquote>
-<p><strong><em>Note:</em></strong> there are a couple requests, <code>getproperty</code> and <code>print</code>, that are added by default.</p>
-</blockquote>
+<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> There are a couple requests, <code>getproperty</code> and <code>print</code>, that are added by default.
+</div>
 <p>We can call the <code>say_hi</code> request externally from a terminal window by running:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>agent cubesat my_agent say_hi
 </code></pre></div></div>
