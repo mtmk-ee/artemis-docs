@@ -14,7 +14,7 @@ series:
   next: /pages/tutorials/setup/setup3.html
 ---
 
-## Brief
+## Introduction
 
 The Artemis Development Environment is provided as an Ubuntu 18.04.4 image with necessary tools preinstalled.
 
@@ -25,7 +25,7 @@ platform-independent manner.
 ### Why Linux?
 
 Linux makes working with the kit software much easier, as the operating system as a whole is designed for developers.
-It is also fairly lightweight, meaning that unnecessary add-ons are stripped away so that the download size is
+Our image is also fairly lightweight, meaning that unnecessary software is stripped out so that the download size is
 minimal.
 
 ### Supported Operating Systems

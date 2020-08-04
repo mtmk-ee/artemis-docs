@@ -620,13 +620,6 @@
           
           
           
-          <li class="active"><a title="Development Environment" href="/artemis-docs/pages/documentation/other/development-environment.html">Development Environment</a></li>
-          
-          
-          
-          
-          
-          
           <li><a title="PyCubed Communication" href="/artemis-docs/pages/documentation/other/pycubed-communication.html">PyCubed Communication</a></li>
           
           
@@ -722,38 +715,35 @@ $('#toc').on('click', 'a', function() {
     
 
    <h2 id="introduction">Introduction</h2>
-<p>The development environment collectively refers to an <a href="https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_18.04_LTS_(Bionic_Beaver)">Ubuntu 18.04.3</a> disk image, and the tools and flight software it contains. Most of the setup and installation is already taken care of in this image.</p>
+<p>The development environment collectively refers to an <a href="https://en.wikipedia.org/wiki/Ubuntu_version_history#Ubuntu_18.04_LTS_(Bionic_Beaver)">Ubuntu 18.04.4</a> disk image, and the tools and flight software it contains. Most of the setup and installation is already taken care of in this image.</p>
+<p>For the installation process, visit the <a href="/artemis-docs/pages/tutorials/setup/setup2.html">setup tutorial</a>.</p>
 <h2 id="whats-inside">What's Inside</h2>
 <ul>
 <li>Flight Software
 <ul>
 <li>BeagleBone Software
 <ul>
-<li>Agent source code (located under <code>~/cosmos/source/projects/cubesat-kit</code>)</li>
-<li>Pre-compiled agents (located under <code>~/cosmos/source/projects/cubesat-kit/build</code>)</li>
+<li>Agent source code</li>
 </ul>
 </li>
 <li>Raspberry Pi Software
 <ul>
-<li>Artemis Python Library (located under <code>~/artemisraspberrypi/artemis</code>)</li>
-<li>Example camera script (located at <code>~/raspberrypi/camera.py</code>)</li>
+<li>Artemis Python Library</li>
+<li>Example camera script</li>
 </ul>
 </li>
 <li>PyCubed Software
 <ul>
-<li>Main code (located under <code>~/pycubed</code>)</li>
+<li>Main code</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>COSMOS
 <ul>
-<li>COSMOS (dev branch)
-<ul>
-<li>SimpleAgent template project (located under <code>~/cosmos/source/projects/simpleagent_template</code>)</li>
-</ul>
-</li>
+<li>COSMOS Core</li>
 <li>COSMOS Web</li>
+<li>SimpleAgent template project</li>
 </ul>
 </li>
 <li>Other
@@ -763,20 +753,13 @@ $('#toc').on('click', 'a', function() {
 <li>ARM Cross Compiler</li>
 </ul>
 </li>
-<li>Scripts for convenience
-<ul>
-<li>Copy built agents to the BeagleBone (<code>~/copy_agents</code>)</li>
-<li>Start COSMOS Web (<code>~/cosmos-web</code>)</li>
-</ul>
-</li>
+<li>Utility Scripts</li>
 <li>MongoDB Server</li>
 <li>Doxygen</li>
 <li>CMake</li>
 </ul>
 </li>
 </ul>
-<h2 id="download-from-github">Download from GitHub</h2>
-<p>As updates are released, you'll be able to find new images hosted on our GitHub repository.</p>
 <h2 id="built-in-scripts">Built-In Scripts</h2>
 <h3 id="update-script">Update Script</h3>
 <p>This script updates the local copy of the cubesat kit repository. If you want to update your software, use this script.</p>

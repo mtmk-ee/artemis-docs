@@ -222,9 +222,6 @@ entries:
   - title: Miscellaneous
     output: web
     folderitems:
-    - title: Development Environment
-      url: /pages/documentation/other/development-environment.html
-      output: web
     - title: PyCubed Communication
       url: /pages/documentation/other/pycubed-communication.html
       output: web
