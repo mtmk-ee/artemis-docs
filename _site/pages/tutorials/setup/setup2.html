@@ -776,37 +776,70 @@ minimal.</p>
 <h3 id="install-the-guest-additions-plugin">1.3 Install the Guest Additions Plugin</h3>
 <p>The Vagrant guest additions plugin automatically installs VirtualBox guest additions into the virtual machine. Install it
 by opening up a command prompt (Windows) or a terminal (Linux/Mac) and running the following:</p>
-<pre><code>vagrant plugin install vagrant-vbguest
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vagrant plugin <span class="nb">install </span>vagrant-vbguest
+</code></pre></div></div>
+<div markdown="span" class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Do not copy the <code>$</code> character or the following space when entering commands.
+This notation is used to indicate the input to a terminal.
+</div>
 <h2 id="set-up-the-artemis-box">2. Set up the Artemis Box</h2>
 <h3 id="add-the-box">2.1 Add the Box</h3>
-<p>Download the Vagrant box (artemis.box). From a command prompt or terminal window, enter the following (using the path you downloaded the Vagrant box to):</p>
-<pre><code>cd PATH/TO/VAGRANT/BOX
-vagrant box add artemis artemis.box
-</code></pre>
-<p>You can delete the <code>artemis.box</code> file you downloaded if you wish.</p>
+<p>Download the Artemis box from
+<a href="">here</a>.
+From a command prompt or terminal window, enter the following command
+using the path you downloaded the Vagrant box to. An example location on Windows is
+<code>C:\Users\YOUR_USERNAME\Documents\Vagrant\artemis</code>.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>PATH/TO/VAGRANT/BOX
+<span class="nv">$ </span>vagrant box add artemis artemis.box
+</code></pre></div></div>
+<p>You can now delete the <code>artemis.box</code> file you downloaded if you wish.</p>
 <h3 id="create-the-virtual-machine">2.2 Create the Virtual Machine</h3>
-<p>Next, enter the following (replacing <code>PATH/TO/VM</code> with the folder you chose):</p>
-<pre><code>cd PATH/TO/VM
-vagrant init artemis
-</code></pre>
-<p>Download the <code>Vagrantfile</code> file to the same folder, overwriting the file created by the <code>vagrant init artemis</code> command.
+<p>Enter the following commands, replacing <code>PATH/TO/VM</code> with the folder you chose.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>PATH/TO/VM
+<span class="nv">$ </span>vagrant init artemis
+</code></pre></div></div>
+<p>Download the <code>Vagrantfile</code> file from
+<a href="https://drive.google.com/file/d/101mCavBwqa-DI9gCteU7ywSimwF4yU0Z/view?usp=sharing">here</a>
+and copy it to the folder you previously chose,
+overwriting the existing <code>Vagrantfile</code> file.
 The new Vagrantfile will set up the virtual machine with necessary virtualization settings.</p>
 <h3 id="start-the-virtual-machine">2.3 Start the Virtual Machine</h3>
 <p>Next run the command:</p>
-<pre><code>vagrant up
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vagrant up
+</code></pre></div></div>
 <p>After a minute or so you should see the virtual machine boot. The default password is <code>vagrant</code>.</p>
-<p>In the future you should be able to start the virtual machine directly from the VirtualBox GUI.</p>
-<h2 id="update-software">3. Update Software</h2>
-<div markdown="span" class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> This step is optional. Follow this step if you want to make sure you have the
-latest software.
+<p>Open a terminal inside the virtual machine (<kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> or the
+black box icon on the dock) and enter the following command:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+</code></pre></div></div>
+<div markdown="span" class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Copying and pasting will not work until after this step, so make sure
+you type this command exactly as it appears!
 </div>
+<h3 id="reboot-the-virtual-machine">2.4 Reboot the Virtual Machine</h3>
+<p>Reboot the machine by returning to your host terminal and entering:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vagrant halt
+<span class="nv">$ </span>vagrant up
+</code></pre></div></div>
+<p>In the future you should be able to start the virtual machine directly from the VirtualBox GUI, or you can continue
+running <code>vagrant up</code> in the virtual machine folder.</p>
+<h3 id="enable-useful-features">2.5 Enable Useful Features</h3>
+<p>Once you have logged into the <code>vagrant</code> user again (default password is `vagrant), you can enable some useful tools:</p>
+<h4 id="automatic-display-resizing">Automatic Display Resizing</h4>
+<p>This feature will resize the guest display when you adjust the size of the container window.</p>
+<p>Click on the <em>View</em> menu at the top of the virtual machine and click on <code>Auto-resize Guest Display</code>. If it is already
+selected, then you should click on it again.</p>
+<h4 id="shared-clipboard">Shared Clipboard</h4>
+<p>This feature will allow you to copy and paste between the host and guest machines.</p>
+<p>Click on the <em>Devices</em> menu at the top of the virtual machine and click on <em>Shared Clipboard</em> &gt; <em>Bidirectional</em>.</p>
+<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> When you paste text into a terminal you must use the
+<kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> shortcut, and when you copy text from a terminal you must
+use the <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> shortcut.
+</div>
+<h2 id="update-software">3. Update Software</h2>
 <p>From the virtual machine, open a new terminal (<kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>) and run the following command:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./update
 </code></pre></div></div>
 <p>You will be prompted whether or not you want to update various components. Entering <code>y</code> will overwrite the existing
-installations.</p>
+installations, if present.</p>
 <h2 id="further-reading">Further Reading</h2>
 <ul>
 <li><a href="/artemis-docs/pages/documentation/other/development-environment.html">Artemis Development Environment</a></li>
@@ -864,7 +897,7 @@ installations.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Hawaii Space Flight Laboratory. All rights reserved. <br />
- Site last generated: Aug 3, 2020 <br />
+ Site last generated: Aug 4, 2020 <br />
 <p><img src="/artemis-docs/resources/logos/hsfl.png" width="100px" alt="HSFL Logo"/></p>
                 </div>
             </div>
